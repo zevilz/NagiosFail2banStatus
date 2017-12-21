@@ -1,4 +1,7 @@
 #!/bin/bash
+# Get fail2ban jails to log file.
+# Author: Alexandr "zEvilz" Emshanov
+# License: MIT
 
 SHOW_JAILS_INFO=0
 F2B_LOG_FILE="<full_path_to_log_file>"

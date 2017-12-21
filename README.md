@@ -1,6 +1,6 @@
 # NagiosFail2banStatus
 
-Nagios plugin for check fail2ban status. Supports directly usage and Nagios/Icinga usage.
+Nagios plugin for check fail2ban status and jails. Supports directly usage and Nagios/Icinga usage.
 
 ## Options
 

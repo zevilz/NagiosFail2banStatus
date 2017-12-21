@@ -4,11 +4,11 @@ Nagios plugin for check fail2ban status. Supports directly usage and Nagios/Icin
 
 ## Options
 
-- -h (--help) - Shows help message.
-- -j (--show-jails) - Shows active jails. Uses special log file with fail2ban status if Nagios/Icinga usage enabled.
-- -i (--show-jails-info) - Shows jails info. Only for directly usage.
-- -n (--nagios) - Enable Nagios/Icinga usage. Showing jails info requiring use log file with fail2ban status.
-- -p (--log-path) - Specify path to log file with fail2ban status. Only for Nagios/Icinga usage (usage: `-p <path> | --log-path=<path>`).
+- `-h (--help)` - Shows help message.
+- `-j (--show-jails)` - Shows active jails. Uses special log file with fail2ban status if Nagios/Icinga usage enabled.
+- `-i (--show-jails-info)` - Shows jails info. Only for directly usage.
+- `-n (--nagios)` - Enable Nagios/Icinga usage. Showing jails info requiring use log file with fail2ban status.
+- `-p (--log-path)` - Specify path to log file with fail2ban status. Only for Nagios/Icinga usage (usage: `-p <path> | --log-path=<path>`).
 
 ## Usage
 
@@ -91,7 +91,7 @@ Than add script to cron
 */1 * * * * bash <full_path_to_script>
 ```
 
-Script creates log file in specified path and make it readable only for users in `nagios` group and for user `nagios`.
+Script creates/updates log file in specified path and make it readable only for users in `nagios` group and for user `nagios`.
 
 ## Changelog
 - 21.12.2017 - 1.0.0 - released

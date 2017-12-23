@@ -59,7 +59,7 @@ Supported vars:
 - `show_jails` - Shows active jails. Set `1` to activate.
 - `log_path` - Sets full path to log file with fail2ban status. Required if `show_jails` set to `1`.
 
-By default without this parameters you can get only status on fail2ban (running/not running). Log file is required for show jails and jails info because the nagios user does not have the rights to access the fail2ban client. Put [get_fail2ban_jails_info.sh](https://github.com/zevilz/NagiosFail2banStatus/blob/master/get_fail2ban_jails_info.sh) in any directory if you want to get this info.
+By default without this parameters you can get only status on fail2ban (running/not running). Log file is required for show jails and jails info because the nagios user does not have the rights to access the fail2ban client. Put [get_fail2ban_jails_info.sh](https://github.com/zevilz/NagiosFail2banStatus/blob/master/get_fail2ban_jails_info.sh) in any directory if you want to get jails info.
 
 Than add script to cron
 ```bash

@@ -14,7 +14,7 @@ usage()
 	echo
 	echo "Options:"
 	echo
-	echo "    -h, --help              Shows this help."
+	echo "    -h, --help              Shows this help. Only for directly usage."
 	echo
 	echo "    -j, --show-jails        Shows active jails. Uses special log file with "
 	echo "                            fail2ban status if Nagios/Icinga usage enabled."
@@ -62,6 +62,7 @@ checkParams()
 		fi
 		if ! [ $HELP -eq 0 ]; then
 			echo "ERROR! It is impossible to use option -h(--help) with enabled Nagios/Icinga usage."
+			exit 2
 		fi
 		if [[ $SHOW_JAILS -eq 1 && -z "$F2B_LOG_FILE" ]]; then
 			echo "ERROR! Path to log file not set."
@@ -97,7 +98,6 @@ while [ 1 ] ; do
 	elif [ -z "$1" ] ; then
 		break
 	else
-		echo
 		echo "ERROR! Unknown key detected!"
 		usage
 		exit 2

@@ -59,39 +59,20 @@ Supported vars:
 - `show_jails` - Shows active jails. Set `1` to activate.
 - `log_path` - Sets full path to log file with fail2ban status. Required if `show_jails` set to `1`.
 
-By default without this parameters you can get only status on fail2ban (running/not running). Log file is required for show jails and jails info because the nagios user does not have the rights to access the fail2ban client. If you want to get this info make folowing script in any directory
-```bash
-#!/bin/bash
-
-SHOW_JAILS_INFO=0
-F2B_LOG_FILE="<full_path_to_log_file>"
-
-JAILS=`fail2ban-client status 2>/dev/null | grep "Jail list" | sed -e 's/^[^:]\+:[ \t]\+//' | sed 's/,//g'`
-
-if ! [ -z "$JAILS" ]; then
-	echo "Fail2ban OK: active jails - $JAILS" > "$F2B_LOG_FILE"
-	if [ $SHOW_JAILS_INFO -eq 1 ]; then
-		echo >> "$F2B_LOG_FILE"
-		for JAIL in $JAILS; do
-			fail2ban-client status $JAIL | sed 's/[|`]*//g' >> "$F2B_LOG_FILE"
-		done
-	fi
-else
-	echo "" > "$F2B_LOG_FILE"
-fi
-
-chmod 700 "$F2B_LOG_FILE"
-chown nagios:nagios "$F2B_LOG_FILE"
-```
-
-Set `SHOW_JAILS_INFO` to `1` if you want to show info about for each jail.
+By default without this parameters you can get only status on fail2ban (running/not running). Log file is required for show jails and jails info because the nagios user does not have the rights to access the fail2ban client. Put [get_fail2ban_jails_info.sh](https://github.com/zevilz/NagiosFail2banStatus/blob/master/get_fail2ban_jails_info.sh) in any directory if you want to get this info.
 
 Than add script to cron
 ```bash
-*/1 * * * * bash <full_path_to_script>
+*/1 * * * * bash <full_path_to_script> -p <full_path_to_log_file>
+```
+
+Use parameter `-i (--show-jails-info)` if you want to show info about for each jail
+```bash
+*/1 * * * * bash <full_path_to_script> -p <full_path_to_log_file> -i
 ```
 
 Script creates/updates log file in specified path and make it readable only for users in `nagios` group and for user `nagios`.
 
 ## Changelog
+- 23.12.2017 - 1.0.1 - added parameters to script `get_fail2ban_jails_info.sh` instead of editing inner variables
 - 21.12.2017 - 1.0.0 - released

@@ -57,8 +57,11 @@ checkParams()
 {
 	if [ $NAGIOS_USAGE -eq 1 ]; then
 		if [ $SHOW_JAILS_INFO -eq 1 ]; then
-			echo "It is impossible to use option -i(--show-jails-info) with enabled Nagios/Icinga usage."
+			echo "ERROR! It is impossible to use option -i(--show-jails-info) with enabled Nagios/Icinga usage."
 			exit 2
+		fi
+		if ! [ $HELP -eq 0 ]; then
+			echo "ERROR! It is impossible to use option -h(--help) with enabled Nagios/Icinga usage."
 		fi
 		if [[ $SHOW_JAILS -eq 1 && -z "$F2B_LOG_FILE" ]]; then
 			echo "ERROR! Path to log file not set."

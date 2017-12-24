@@ -38,18 +38,18 @@ Show active jails and their info
 Add following check command object to your commands file
 ```bash
 object CheckCommand "fail2ban" {
-		import "plugin-check-command"
-		command = [ PluginDir + "/check_fail2ban.sh" ]
-		arguments = {
-				"-n" = {}
-				"-j" = {
-						set_if = "$show_jails$"
-				}
-				"-p" = {
-						value = "$log_path$"
-						set_if = "$show_jails$"
-				}
+	import "plugin-check-command"
+	command = [ PluginDir + "/check_fail2ban.sh" ]
+	arguments = {
+		"-n" = {}
+		"-j" = {
+			set_if = "$show_jails$"
 		}
+		"-p" = {
+				value = "$log_path$"
+				set_if = "$show_jails$"
+		}
+	}
 }
 ```
 

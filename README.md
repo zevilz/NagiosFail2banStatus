@@ -46,8 +46,8 @@ object CheckCommand "fail2ban" {
 			set_if = "$show_jails$"
 		}
 		"-p" = {
-				value = "$log_path$"
-				set_if = "$show_jails$"
+			value = "$log_path$"
+			set_if = "$show_jails$"
 		}
 	}
 }

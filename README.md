@@ -14,7 +14,7 @@ Nagios plugin for check fail2ban status and jails. Supports directly usage and N
 
 Notice: curent user must be root or user with sudo access.
 
-Put [check_fail2ban.sh](https://github.com/zevilz/NagiosFail2banStatus/blob/master/check_fail2ban.sh) to nagios plugins directory (usually /usr/lib*/nagios/plugins). Than make file executable (`chmod +x check_fail2ban.sh`).
+Put [check_fail2ban.sh](https://github.com/zevilz/NagiosFail2banStatus/blob/master/check_fail2ban.sh) to nagios plugins directory (usually `/usr/lib*/nagios/plugins`). Than make file executable (`chmod +x check_fail2ban.sh`).
 
 ### Directly usage
 

@@ -63,12 +63,12 @@ By default without this parameters you can get only status on fail2ban (running/
 
 Than add script to cron
 ```bash
-*/1 * * * * bash <full_path_to_script> -p <full_path_to_log_file>
+*/1 * * * * /bin/bash <full_path_to_script> -p <full_path_to_log_file>
 ```
 
 Use parameter `-i (--show-jails-info)` if you want to show info about for each jail
 ```bash
-*/1 * * * * bash <full_path_to_script> -p <full_path_to_log_file> -i
+*/1 * * * * /bin/bash <full_path_to_script> -p <full_path_to_log_file> -i
 ```
 
 Script creates/updates log file in specified path and make it readable only for users in `nagios` group and for user `nagios`.

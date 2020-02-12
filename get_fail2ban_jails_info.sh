@@ -4,7 +4,7 @@
 # URL: https://github.com/zevilz/NagiosFail2banStatus
 # Author: Alexandr "zEvilz" Emshanov
 # License: MIT
-# Version: 1.0.1
+# Version: 1.0.2
 
 checkLogFilePath()
 {

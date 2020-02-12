@@ -74,5 +74,6 @@ Use parameter `-i (--show-jails-info)` if you want to show info about for each j
 Script creates/updates log file in specified path and make it readable only for users in `nagios` group and for user `nagios`.
 
 ## Changelog
+- 12.02.2020 - 1.0.2 - Fixed definition of running process for new versions of Fail2Ban.
 - 23.12.2017 - 1.0.1 - added parameters to script `get_fail2ban_jails_info.sh` instead of editing inner variables
 - 21.12.2017 - 1.0.0 - released

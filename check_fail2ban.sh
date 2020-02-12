@@ -30,7 +30,7 @@ usage()
 }
 checkF2bProcess()
 {
-	F2B_CHECK_PROCCESS=`ps -e | grep fail2ban-server`
+	F2B_CHECK_PROCCESS=`ps -e | grep 'fail2ban\|f2b'`
 	if [ -z "$F2B_CHECK_PROCCESS" ]; then
 		echo "ERROR! Fail2ban not running."
 		exit 2
